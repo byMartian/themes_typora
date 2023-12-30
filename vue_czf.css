@@ -1,0 +1,428 @@
+/* 本主题魔改于 Vue 主题 */
+
+/* 字体引用 */
+/* @import './vue_czf/fonts.css'; */
+
+
+/* ----------------------主题的基本色彩和字体设置------------------------------ */
+:root {
+    --side-bar-bg-color: #edeeee;/*左侧大纲背景颜色*/
+    --control-text-color: #505050;/*左侧大纲文字颜色*/
+	--select-text-bg-color: rgb(145, 171, 243); /* 选中文本的背景颜色 */
+    --active-file-text-color: #262626;/* 活动文件的文字颜色 */
+    --active-file-border-color: #f22f27;/* 活动文件的边框颜色 */
+    --font-sans-serif: 'Ubuntu', 'Source Sans Pro', sans-serif !important;
+    --font-monospace: 'Fira Code', 'Roboto Mono', monospace !important;
+	--primary-color: #09e979;/* 主题的主色调 */
+}
+
+
+
+
+/* ————————————————————————————————— 正文基本设置: 正文、标题和段落  ————————————————————————— */
+/*
+font 字体设置
+font-family：字体类型
+font-style：normal、italic（正常、斜体）
+font-weight：是否为粗体（bold）
+font-size：字体大小
+src：来源
+*/
+html {
+    font-size: 18px;/*正文 font size*/
+}
+
+/* 背景方格线 */
+/* content {
+  background-image: linear-gradient(90deg, rgba(60, 10, 30, 04) 3%, transparent 0), linear-gradient(1turn, rgba(60, 10, 30.04)3%, transparent 0);
+  background-size: 20px 20px;
+  background-position: 50%;
+} */
+body {
+    font-family: var(--font-sans-serif); /* 正文使用无衬线字体 */
+    color: #000000; /* 正文颜色 */
+    -webkit-font-smoothing: antialiased; /* 在WebKit浏览器中启用字体平滑 */
+    line-height: 1.6rem; /* 行高设置 */
+    letter-spacing: 0; /* 字母间距设置 */
+    margin: 0;
+    overflow-x: hidden; /* 隐藏水平滚动条 */
+}
+
+#write {
+    max-width: 90%; /* 调整大小写作区域的最大宽度 */
+    font-size: 1rem; /* 基本字体大小 */
+    color: #000000; /* 基本字体颜色 */
+    margin: 0 auto; /* 自动边距实现居中对齐 */
+    padding: 20px 30px 100px; /* 内边距设置 */
+}
+
+
+
+/* ------------------------正文： 段落设置-------------- */
+/* 段落设置 */
+#write p {
+    line-height: 1.6rem; /* 行高 */
+    word-spacing: .05rem; /* 字间距 */
+}
+
+/* ------------------------列表设置 --------------------*/
+#write ol li {
+    padding-left: 0.5rem; /* 有序列表项左内边距 */
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px; /* 文档中首个无序或有序列表的上边距 */
+}
+
+body > *:first-child {
+    margin-top: 0 !important; /* 页面中第一个元素的上边距设为0 */
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important; /* 页面中最后一个元素的下边距设为0 */
+}
+
+/* ----------------链接样式---------------------- */
+a {
+    color: #04f18e; /* 链接文字颜色 */
+    font-weight: 600; /* 字体加粗 */
+    padding: 0 2px; /* 内边距 */
+    text-decoration: none; /* 无下划线 */
+}
+
+/* --------------------标题样式 ---------------------*/
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    margin-top: 1rem; /* 上边距 */
+    margin-bottom: 1rem; /* 下边距 */
+    font-weight: bold; /* 字体加粗 */
+    line-height: 1.4; /* 行高 */
+    cursor: text; /* 鼠标样式 */
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+    text-decoration: none; /* 悬停时标题中的链接无下划线 */
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+    font-size: inherit !important; /* 代码字体大小与所在标题一致 */
+}
+
+
+/* ---- -特定标题大小 ----- */
+h1 {
+    padding-bottom: .4rem; /* 底部内边距 */
+    font-size: 2.2rem; /* 字体大小 */
+    line-height: 1.3; /* 行高 */
+}
+
+
+
+/* ----以下是 h2 到 h6 标题的样式设置，包括字体大小、行高、边距等---- */
+
+/* 段落、引用、列表、表格等元素的边距设置 */
+p, blockquote, ul, ol, dl, table {
+    margin: 0.8em 0;
+}
+
+li > ol, li > ul {
+    margin: 0 0;
+}
+
+/* 水平分割线样式 */
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #bbb9b9;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+/* 标题之前的特殊边距设置 */
+body > h2:first-child, body > h1:first-child, body > h1:first-child + h2, body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+    margin-top: 0;
+}
+
+
+
+/* ———————————————————————————————— 列表样式设置———————————————————————— */
+li p.first {
+    display: inline-block; /* 列表项内的第一个段落以内联块显示 */
+}
+
+ul, ol {
+    padding-left: 30px; /* 无序列表和有序列表左内边距 */
+}
+
+ul:first-child, ol:first-child {
+    margin-top: 0; /* 列表作为首个元素时，上边距设为0 */
+}
+
+ul:last-child, ol:last-child {
+    margin-bottom: 0; /* 列表作为末尾元素时，下边距设为0 */
+}
+
+
+/* —————————————————————————————————————————————引用块基础设置——————————————————————————————————————— */
+/*blockquote 引用块的格式*/
+blockquote {
+	border-left: 5px solid #2E8B57; /*左侧边缘颜色:海洋绿#2E8B57*/
+	background-color: rgb(247, 247, 247); /*背景颜色:蜂蜜色*/
+    color: rgba(77, 77, 77, 0.801);/* 文本颜色: 灰色#777 */
+	padding: 10px 15px; /* 内边距：上下10px，左右15px */
+	margin-left:25px;	 /* 左外边距: 25px */
+    font-family: 'Monaco', 'Rockwell', 'Hack', '微软雅黑'; /* 字体设置 */
+}
+/* 嵌套引用块的格式 */
+blockquote blockquote {
+    padding-right: 0; /* 嵌套引用块右内边距设置为0，即去除右内边距 */
+}
+
+
+
+
+/* ——————————————————————————————— 表格样式 ————————————————————— */
+/*表格：  单元格
+border:边界
+padding:填充
+box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+border-top：
+px是pixel的缩写，是​像素单位也是为影像显示的基本单位
+*/
+table {
+    padding: 0;
+    word-break: initial; /* 单词不拆分 */
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5; /* 行顶部边框 */
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n), thead {
+    background-color: #fafafa; /* 表格行和表头的背景颜色 */
+}
+
+table tr th {
+    font-weight: bold; /* 表头加粗 */
+    border: 1px solid #dfe2e5; /* 表头边框 */
+    text-align: left; /* 左对齐 */
+    margin: 0;
+    padding: 6px 13px; /* 内边距 */
+}
+
+table tr td {
+    border: 1px solid #dfe2e5; /* 单元格边框 */
+    text-align: left; /* 左对齐 */
+    margin: 0;
+    padding: 6px 13px; /* 内边距 */
+}
+
+
+
+
+/*--------------------- 代码相关样式-------------------- */
+#write strong {
+    padding: 0 1px; /* 加粗文本内边距 */
+}
+
+#write em {
+    padding: 0 5px 0 2px; /* 斜体文本内边距 */
+}
+
+/* 文字中的代码段样式 */
+#write code, tt {
+    padding: 2px 4px; /* 内边距 */
+    border-radius: 2px; /* 边框圆角 */
+    font-family: 'Monaco', 'Rockwell', 'Hack', '微软雅黑'; /* 字体设置 */
+    font-size: 0.92rem; /* 字体大小 */
+    color: #D2691E; /* 文字颜色 */
+    background-color: rgba(240, 240, 240, 0.6); /* 背景颜色 */
+}
+
+tt {
+    margin: 0 2px; /* 外边距 */
+}
+
+#write .md-footnote {
+    background-color: #aaa9a9; /* 脚注背景颜色 */
+    color: #e96900; /* 脚注文本颜色 */
+}
+
+#write mark {
+    background-color: #EBFFEB; /* 高亮背景颜色 */
+    border-radius: 2px; /* 边框圆角 */
+    padding: 2px 4px; /* 内边距 */
+    margin: 0 2px; /* 外边距 */
+    color: #2c3333; /* 文本颜色 */
+    font-weight: 500; /* 字体加粗 */
+}
+
+#write del {
+    padding: 1px 2px; /* 删除线内边距 */
+}
+
+
+/* -----代码框样式 ------*/
+#write .md-fences {
+    border: 1px solid rgb(112, 112, 112); /* 边框样式 */
+    -webkit-font-smoothing: initial; /* WebKit浏览器字体平滑 */
+    margin: 2rem 0 !important; /* 外边距 */
+    padding: 0.5rem 0 !important; /* 内边距 */
+    line-height: 1.55rem; /* 行高 */
+    background-color: rgb(250, 250, 250) !important; /* 背景颜色 */
+    border-radius: 2px; /* 边框圆角 */
+    font-family: 'Monaco', 'Rockwell', 'Hack', '微软雅黑'; /* 字体设置 */
+    font-size: 0.8rem; /* 字体大小 */
+}
+
+
+
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    background-color: #f8f8f8;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image > .md-meta {
+    border-radius: 3px;
+    font-family: var(--font-monospace);
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--font-sans-serif);
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
